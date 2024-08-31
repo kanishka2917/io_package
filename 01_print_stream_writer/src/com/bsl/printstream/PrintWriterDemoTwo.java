@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 public class PrintWriterDemoTwo {
 	public static void main(String[] args) {
 		
-		PrintWriter writer = new PrintWriter(System.out);
+		PrintWriter writer = new PrintWriter(System.out, true);
 		int i = 10;
 		String s = "hello";
 		double d = 10.99;

@@ -1,39 +1,40 @@
 package com.bsl.printstream;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.Reader;
-
-import javax.print.DocFlavor.READER;
-import javax.swing.tree.DefaultTreeCellEditor.EditorContainer;
+import java.io.InputStreamReader;
 
 public class BufferedReaderDemo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader reader = new BufferedReader(isr);
+
+		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
+
 			System.out.println("please enter a value");
-			Object reader = null;
-			String s1 = (String) reader;
+			String s1 = reader.readLine();
 			int x = Integer.parseInt(s1);
 			System.out.println("please enter a second vaue");
-			String reader2 = null;
-			String s2 = (String) reader2;
+			String s2 = reader.readLine();
 			int y = Integer.parseInt(s2);
 			int z = x + y;
 			System.out.println(x);
 			System.out.println(y);
 			System.out.println(z);
+		} catch (IOException e) {
+			// TODO: handle exception
+			System.out.println("Some error reading");
+			System.out.println("*******Program ends here*******");
 		} catch (NumberFormatException e) {
-			e.printStackTrace();
+			System.out.println("Please type only number");
+			System.out.println("*******Program ends here*******");
 		} finally {
-			try {
-				Reader reader = null;
-				reader.close();
-
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			reader.close();
 		}
+
 	}
 
 }
