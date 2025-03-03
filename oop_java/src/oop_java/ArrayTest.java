@@ -1,7 +1,7 @@
 package oop_java;
 
 public class ArrayTest {
-	public static void main (Strinf args[]) {
+	public static void main (String args[]) {
 		int number [] = {48,39,81,3818,38};
 		int n = number.length;
 		System.out.println("given list");
