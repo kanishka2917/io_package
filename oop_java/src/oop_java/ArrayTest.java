@@ -10,8 +10,8 @@ public class ArrayTest {
 			System.out.println(" " + number[i]);
 		}
 		System.out.println("\n");
-		for(i = 0; i < n; i ++) {
-			for(j = i + 1; j < n; j++) {
+		for(int i = 0; i < n; i ++) {
+			for(int j = i + 1; j < n; j++) {
 				if(number[i]<number[j]) {
 					int temp = number[i];
 					number [i] = number[j];
